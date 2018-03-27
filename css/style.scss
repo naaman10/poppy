@@ -1,8 +1,7 @@
-/*
- * This css file includes styles added in the jekyll port of this theme.
- * To find the original style.css that ships with Airspace, read airspace.css
- *
- */
+---
+---
+
+
  body {
    font-family: 'Josefin Slab', serif;
    font-weight: 100;
@@ -20,7 +19,7 @@
 }
 
 #homeIntro {
-  background-image: url('/img/home-header.jpeg');
+  background-image: url('{{ site.github.url }}/img/home-header.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -74,7 +73,7 @@
   color: black;
 }
 .socialNav {
-  list-style:
+  list-style: none;
 }
 
 .socialNav li {
