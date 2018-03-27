@@ -1,5 +1,5 @@
 ---
-title: theatreclub
+title: Poppy Coffee Co.
 timezone: UTC
 collections:
   posts:
@@ -27,9 +27,8 @@ clubBenefits:
     - Benefit 2
     - Benefit 3
     - Benefit 4
-email: theatreclub@SuperBreak.com
-description: <p>Witness some of the West End’s biggest shows with our unrivalled London theatre break packages – complete with tickets and a hotel stay! You can even add return rail journey to your theatre break in London as well as tickets for the city’s leading attractions.</p><p>Don’t fancy London? Our regional theatre breaks offer you the chance to see the capital’s biggest shows hit the stage in key UK cities like Edinburgh, Manchester and Cardiff. Or, to really book a break to remember, experience a Broadway theatre break in New York with tickets, hotel and flights included in your package!</p>
-
+email:
+description: <p>You can't move for coffee chains in town centres these days– after all that's where the crowds are.</p><p>If you're lucky you may find a dedicated artisan coffee shop tucked away somewhere. There you will find the perfect cup that makes you want to be late for work. The freshest of beans ground individually for your cup, not going stale in a hopper; sumptuous micro-foam on your latte or cappuccino, not weak froth. And the friendly welcome given to those in the know.</p>
 baseurl: ''
 url: http://theatreclub.superbreak.com
 markdown: kramdown
