@@ -13,15 +13,22 @@ h1, h2, h3 {
 .header {
   margin-bottom: 20px; }
 
-#homeIntro {
-  background-image: url("/img/home-header.jpeg");
+#aboutIntro, #homeIntro {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 340px;
   position: relative; }
 
-#homeIntro:before {
+#homeIntro {
+  background-image: url("/img/home-header.jpeg"); }
+
+#aboutIntro {
+  background-image: url("/img/home-header.jpeg");
+  color: white;
+  font-size: 3em; }
+
+#aboutIntro:before, #homeIntro:before {
   content: "";
   position: absolute;
   left: 0;
