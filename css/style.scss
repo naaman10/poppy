@@ -87,3 +87,17 @@
   display: inline;
   margin-right: 10px;
 }
+.theTeam {
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 1rem;
+}
+.theTeam figure {
+  text-align: center;
+  display: block;
+}
+.theTeam figure img {
+  border-radius: 130px;
+  filter: grayscale(.9);
+
+}
