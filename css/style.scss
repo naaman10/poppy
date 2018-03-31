@@ -1,7 +1,12 @@
 ---
 ---
 
+// colors
+$red1: #E42825;
+$red2: #BE3023;
+$red3: #89271F;
 
+// main css
  body {
    font-family: 'Josefin Slab', serif;
    font-weight: 100;
@@ -45,6 +50,13 @@
   background-color: #333333;
   opacity: 0.8;
 }
+#homeIntro::before {
+  background-image: url('{{ site.github.url }}/img/beans.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.8;
+}
 .logo {
   text-align: center;
   color: white;
@@ -81,11 +93,15 @@
 }
 .socialNav {
   list-style: none;
+  margin-top: 28px;
 }
 
 .socialNav li {
   display: inline;
   margin-right: 10px;
+}
+.socialNav li a {
+  color: $red3;
 }
 .theTeam {
   background-color: #f5f5f5;
