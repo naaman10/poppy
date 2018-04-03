@@ -16,13 +16,15 @@ $red3: #89271F;
    font-family: 'Amatic SC', sans-serif;
    text-transform: uppercase;
  }
- .header .container,.header .row{
+.header .container,.header .row{
    height:100%;
  }
 .header {
   margin-bottom: 20px;
 }
-
+.navbar-nav {
+  padding-top: 10px;
+}
 #aboutIntro, #homeIntro {
   background-repeat: no-repeat;
   background-size: cover;
@@ -61,6 +63,9 @@ $red3: #89271F;
   text-align: center;
   color: white;
 }
+.logo .btn {
+  margin-top: 20px;
+}
 .logoText {
   font-size: 3em;
 }
@@ -93,7 +98,8 @@ $red3: #89271F;
 }
 .socialNav {
   list-style: none;
-  margin-top: 28px;
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 .socialNav li {
