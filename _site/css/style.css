@@ -13,6 +13,9 @@ h1, h2, h3 {
 .header {
   margin-bottom: 20px; }
 
+.navbar-nav {
+  padding-top: 10px; }
+
 #aboutIntro, #homeIntro {
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,6 +54,9 @@ h1, h2, h3 {
   text-align: center;
   color: white; }
 
+.logo .btn {
+  margin-top: 20px; }
+
 .logoText {
   font-size: 3em; }
 
@@ -82,7 +88,8 @@ footer {
 
 .socialNav {
   list-style: none;
-  margin-top: 28px; }
+  margin-top: 10px;
+  margin-bottom: 0; }
 
 .socialNav li {
   display: inline;
