@@ -110,3 +110,7 @@ footer {
 .theTeam figure img {
   border-radius: 130px;
   filter: grayscale(0.9); }
+
+.btn-primary {
+  background-color: #89271F;
+  border-color: #89271F; }

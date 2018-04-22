@@ -2,77 +2,82 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <form>
-          <div class="form-group">
-            <label for="contactName">Your Name:</label>
-            <input type="text" class="form-control" id="contactName" placeholder="You name">
-          </div>
-          <div class="form-group">
-            <label for="contactEmail">Your Email:</label>
-            <input type="text" class="form-control" id="contactEmail" placeholder="Your Email">
-          </div>
-          <div class="form-group">
-            <label for="contactMessage">Your Message:</label>
-            <textarea type="text" class="form-control" id="contactMessage" placeholder="Your message" rows="3"></textarea>
-          </div>
-          <a class="btn btn-primary btn-block" id="contactSubmit">Submit</a>
-        </form>
+        <!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://naamanhudson.us17.list-manage.com/subscribe/post?u=3e5ac6377786ee94974f4429a&amp;id=a7c1f0f0d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2>Subscribe to our mailing list</h2>
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-FNAME">Your Name </label>
+	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div class="mc-field-group">
+	<label for="mce-MESSAGE">Your Message  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="MESSAGE" class="required" id="mce-MESSAGE">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3e5ac6377786ee94974f4429a_a7c1f0f0d1" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Submit" name="subscribe" class="btn btn-primary"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[2]='MESSAGE';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
         <p></p>
       </div>
       <div class="col-md-6">
-        <div id="map"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ9UmnHC-jhTGc_OlgOOp4OPzy3JpB25w&callback=initMap">
-    </script>
-        <!-- <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBIDtFItOF5mvCblbVDoCV4HggRPvnZ3oI?callback=initMap'></script>
-      <div id="map" style="width: 100%; height: 400px;"></div>
-        <script type="text/javascript">
-        function initMap() {
-          var locations = [
-            ['<strong>Heworth Green</strong><br>Mon, Wed & Fri 08:15', 53.964526, -1.072033, 4],
-            ['Coogee Beach', 53.9876594, -1.1015599, 5],
-            ['Manly Beach', 53.9856076,-1.095386, 2],
-            ['Maroubra Beach', -33.950198, 151.259302, 1]
-          ];
+        <div id="map-canvas" style="width:100%; height:650px"></div>
 
-          var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
-            center: new google.maps.LatLng(53.959965, -1.087298),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          });
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
-          var infowindow = new google.maps.InfoWindow();
+<script>
+	var markers = {{ site.data.locations | jsonify }};
 
-          var marker, i;
-
-          for (i = 0; i < locations.length; i++) {
-            marker = new google.maps.Marker({
-              position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-              map: map
-            });
-
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-              return function() {
-                infowindow.setContent(locations[i][0]);
-                infowindow.open(map, marker);
-              }
-            })(marker, i));
-          }
-        }
-        </script> -->
+	function initializeMap() {
+		var bounds = new google.maps.LatLngBounds(),
+			mapOptions = {
+				mapTypeId: 'roadmap',
+				styles: [{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#aee2e0"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#abce83"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#769E72"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#7B8758"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"color":"#EBF4A4"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#8dab68"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#5B5B3F"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ABCE83"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#A4C67D"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#9BBF72"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#EBF4A4"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#87ae79"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#7f2200"},{"visibility":"off"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"},{"visibility":"on"},{"weight":4.1}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#495421"}]},{"featureType":"administrative.neighborhood","elementType":"labels","stylers":[{"visibility":"off"}]}]
+			};
+		// Display a map on the page
+		var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+		map.setTilt(45);
+		for (var i = 0; i < markers.length; i++ ) {
+			var position = new google.maps.LatLng(markers[i].latitude, markers[i].longitude);
+			bounds.extend(position);
+			marker = new google.maps.Marker({
+				position: position,
+				map: map,
+        icon: '{{ site.github.url }}/img/logo-poppy-32x32.png',
+				title: markers[i].title
+			});
+			// Automatically center the map fitting all markers on the screen
+			map.fitBounds(bounds);
+		}
+		// Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+		var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+			this.setZoom(5);
+			google.maps.event.removeListener(boundsListener);
+		});
+	}
+	google.maps.event.addDomListener(window, 'load', initializeMap);
+</script>
       </div>
     </div>
   </div>
