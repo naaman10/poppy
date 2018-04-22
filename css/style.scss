@@ -121,5 +121,8 @@ $red3: #89271F;
 .theTeam figure img {
   border-radius: 130px;
   filter: grayscale(.9);
-
+}
+.btn-primary {
+  background-color: $red3;
+  border-color: $red3;
 }
