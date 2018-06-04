@@ -58,72 +58,179 @@
 
 
 
-    <section id="projectsIntro" class="header">
+    <section id="aboutIntro" class="header">
   <div class="container">
-    <div class="row align-items-end">
+    <div class="row align-items-center">
       <div class="col">
         <h1>Contact</h1>
       </div>
     </div>
   </div>
 </section>
-
-<section>
+<section id="contactSection">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <!-- Begin MailChimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-<form action="https://naamanhudson.us17.list-manage.com/subscribe/post?u=3e5ac6377786ee94974f4429a&amp;id=a7c1f0f0d1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-	<h2>Subscribe to our mailing list</h2>
-<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-<div class="mc-field-group">
-	<label for="mce-FNAME">Your Name </label>
-	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-</div>
-<div class="mc-field-group">
-	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-</label>
-	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-</div>
-<div class="mc-field-group">
-	<label for="mce-MESSAGE">Your Message  <span class="asterisk">*</span>
-</label>
-	<input type="text" value="" name="MESSAGE" class="required" id="mce-MESSAGE">
-</div>
-	<div id="mce-responses" class="clear">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3e5ac6377786ee94974f4429a_a7c1f0f0d1" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Submit" name="subscribe" class="btn btn-primary"></div>
-    </div>
-</form>
-</div>
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[1]='FNAME';ftypes[1]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[2]='MESSAGE';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-<!--End mc_embed_signup-->
+        <form name="contactPoppy" netlify action="/thank-you">
+          <div class="form-group">
+            <label for="nameContact">Name</label>
+            <input type="text" name="name" class="form-control" id="nameContact" aria-describedby="YourName" placeholder="Enter name">
+          </div>
+          <div class="form-group">
+            <label for="emailContact">Email</label>
+            <input type="email" name="email" class="form-control" id="emailContact" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="numberContact">Number</label>
+            <input type="number" name="number" class="form-control" id="numberContact" placeholder="Telephone number">
+          </div>
+          <div class="form-group">
+            <label for="messageContact">Message</label>
+            <textarea name="message" class="form-control" id="messageContact" rows="3"></textarea>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+        </form>
         <p></p>
       </div>
       <div class="col-md-6">
-        <div id="map-canvas" style="width:100%; height:650px"></div>
+        <div id="map-canvas" style="width:100%; height:500px"></div>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
 <script>
-	var markers = [{"latitude":"-45.878760","longitude":"170.502798","name":"Dunedin Outlet"},{"latitude":"-41.286460","longitude":"174.776236","name":"Wellington Outlet"},{"latitude":"-46.098799","longitude":"168.945819","name":"Gore Outlet"},{"latitude":"-46.413187","longitude":"168.353773","name":"Invercargill Outlet"},{"latitude":"-35.117330","longitude":"173.267559","name":"Kaitai Outlet"},{"latitude":"-45.067944","longitude":"168.662109","name":"Queenstown Outlet"}];
+	var markers = [{"latitude":"53.964355","longitude":"-1.072328","name":"Eboracum Way"},{"latitude":"53.98876","longitude":"-1.1041587","name":"Clifton Moor"}];
 
 	function initializeMap() {
 		var bounds = new google.maps.LatLngBounds(),
 			mapOptions = {
 				mapTypeId: 'roadmap',
-				styles: [{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#aee2e0"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#abce83"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#769E72"}]},{"featureType":"poi","elementType":"labels.text.fill","stylers":[{"color":"#7B8758"}]},{"featureType":"poi","elementType":"labels.text.stroke","stylers":[{"color":"#EBF4A4"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"visibility":"simplified"},{"color":"#8dab68"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#5B5B3F"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ABCE83"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#A4C67D"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#9BBF72"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#EBF4A4"}]},{"featureType":"transit","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#87ae79"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#7f2200"},{"visibility":"off"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"},{"visibility":"on"},{"weight":4.1}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#495421"}]},{"featureType":"administrative.neighborhood","elementType":"labels","stylers":[{"visibility":"off"}]}]
+				styles: [{
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [{
+            "visibility": "on"
+          }, {
+            "color": "#aee2e0"
+          }]
+        }, {
+          "featureType": "landscape",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "#eee"
+          }]
+        }, {
+          "featureType": "poi",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "#eee"
+          }]
+        }, {
+          "featureType": "poi",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#000"
+          }]
+        }, {
+          "featureType": "poi",
+          "elementType": "labels.text.stroke",
+          "stylers": [{
+            "color": "#000"
+          }]
+        }, {
+          "featureType": "poi.park",
+          "elementType": "geometry",
+          "stylers": [{
+            "visibility": "simplified"
+          }, {
+            "color": "#eee"
+          }]
+        }, {
+          "featureType": "road",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "visibility": "simplified"
+          }]
+        }, {
+          "featureType": "road",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#333333"
+          }]
+        }, {
+          "featureType": "road",
+          "elementType": "labels.text.stroke",
+          "stylers": [{
+            "color": "#000"
+          }]
+        }, {
+          "featureType": "road",
+          "elementType": "labels.icon",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "road.local",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#89271F"
+          }]
+        }, {
+          "featureType": "road.arterial",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#BE3023"
+          }]
+        }, {
+          "featureType": "road.highway",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#E42825"
+          }]
+        }, {
+          "featureType": "transit",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "administrative",
+          "elementType": "geometry.stroke",
+          "stylers": [{
+            "visibility": "on"
+          }, {
+            "color": "#87ae79"
+          }]
+        }, {
+          "featureType": "administrative",
+          "elementType": "geometry.fill",
+          "stylers": [{
+            "color": "#7f2200"
+          }, {
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "administrative",
+          "elementType": "labels.text.stroke",
+          "stylers": [{
+            "color": "#ffffff"
+          }, {
+            "visibility": "on"
+          }, {
+            "weight": 4.1
+          }]
+        }, {
+          "featureType": "administrative",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#495421"
+          }]
+        }, {
+          "featureType": "administrative.neighborhood",
+          "elementType": "labels",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }]
 			};
 		// Display a map on the page
 		var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
@@ -177,7 +284,7 @@
             <li><a href="#"><i class="fas fa-phone"></i></a></li>
           </ul>
         </div>
-        <p></p>
+        <p>Powered by <a href="http://www.ariesdesign.co/"><img src="/img/aries.png" width="40"> ARIES DESIGN</a></p>
       </div>
     </div>
   </div>

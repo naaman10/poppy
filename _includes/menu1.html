@@ -1,21 +1,26 @@
 <div class="container">
-  <h1>Our Menu</h1>
   <p>
     If you have any allergies or intolerances please speak to the staff prior to ordering as we aim to cater for everyone.
   </p>
-  <div class="col-md-8">
+  <div class="col">
     <table class="table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col"></th>
-          <th scope="col">Price</th>
+          <th scope="col">Item</th>
+          <th scope="col">Price Medium</th>
+          <th scope="col">Price Large</th>
+          <th scope="col">Price Extra Large</th>
         </tr>
       </thead>
       <tbody>
+        {% for menu-coffee in site.data.menu-coffees %}
         <tr>
-          <th scope="row">cappuccino</th>
-          <td>£2.40</td>
+          <th scope="row">{{ menu-coffee.item }}</th>
+          <td>{{ menu-coffee.priceM }}</td>
+          <td>{{ menu-coffee.priceL }}</td>
+          <td>{{ menu-coffee.priceXL }}</td>
         </tr>
+        {% endfor %}
       </tbody>
     </table>
   </div>
