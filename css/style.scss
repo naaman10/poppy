@@ -78,6 +78,7 @@ $red3: #89271F;
   text-align: center;
   background-color: #d5d5d5;
   padding: 30px;
+  font-family: sans-serif;
 }
 .footer-menu {
   margin-top: 10px;
@@ -125,4 +126,7 @@ $red3: #89271F;
 .btn-primary {
   background-color: $red3;
   border-color: $red3;
+}
+#contactSection {
+  margin-bottom: 30px;
 }

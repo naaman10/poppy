@@ -67,7 +67,8 @@ h1, h2, h3 {
 footer {
   text-align: center;
   background-color: #d5d5d5;
-  padding: 30px; }
+  padding: 30px;
+  font-family: sans-serif; }
 
 .footer-menu {
   margin-top: 10px; }
@@ -114,3 +115,6 @@ footer {
 .btn-primary {
   background-color: #89271F;
   border-color: #89271F; }
+
+#contactSection {
+  margin-bottom: 30px; }
